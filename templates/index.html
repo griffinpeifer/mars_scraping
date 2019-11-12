@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Information</title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1 style="margin-left: 475px">Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="margin-left: 500px">Scrape New Data</a></p>
+    </div>
+
+    <div class="row">
+        <h2>Latest Mars News</h2>
+        <h4>{{ mars.news_title }}</h4>
+        <p>{{ mars.news_p }}</p>
+    </div>
+    <div class="row">
+        <div class="col-md-8 Featured">
+            <h3>Featured Mars Image</h3>
+            <img src="{{ mars.featured_image_url }}" alt="Featured" style="margin-right: 0px;">
+        </div>
+    
+
+        <div class="col-md-4">
+            <div class="card" style="width: 4in; padding: 0px;">
+                <div class="card-body" >
+                    <h4 class="card-title">Current Weather on Mars</h4>
+                    <p class="card-text">{{ mars.mars_weather }}</p>
+                </div>
+            </div>
+        </div> 
+
+        <div class="col-md-4">
+            <div class="Table">
+                <h3 class="text-left" style="padding: 0px;">Mars Facts</h3>
+                <table border="1" class="dataframe">
+                    <thead>
+                        <tr style="text-align: right;">
+                        <th></th>
+                        <th>Description</th>
+                        <th>Values</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th></th>
+                        <td>Equatorial Diameter:</td>
+                        <td>6,792 km</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Polar Diameter:</td>
+                        <td>6,752 km</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Mass:</td>
+                        <td>6.39 x 10^23 kg (0.11 Earths)</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Moons:</td>
+                        <td>2 (Phobos &amp; Deimos)</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Orbit Distance:</td>
+                        <td>227,943,824 km (1.38 AU)</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Orbit Period:</td>
+                        <td>687 days (1.9 years)</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Surface Temperature:</td>
+                        <td>-87 to -5 &#176C</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>First Record:</td>
+                        <td>2nd millennium BC</td>
+                        </tr>
+                        <tr>
+                        <th></th>
+                        <td>Recorded By:</td>
+                        <td>Egyptian astronomers</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 class="text-center Hemispheres" style="margin-top: 50px; margin-left: 500px;">Mars Hemispheres</h2>
+        <hr>
+        <div class="row">
+                <div class="col-md-12">
+                       <!-- put in a bootstrap grid -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <figure class="figure" style="margin: 50px; border: 1px solid rgb(206, 205, 205);">   
+                                <img src="{{ mars['img_url'][3] }}" width=100%>    
+                                <figcaption class="figure-caption text-left"> <h5>Valles Marineris Hemisphere</h5></figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="col-md-6">
+                            <figure class="figure" style="margin: 50px; border: 1px solid rgb(206, 205, 205);">   
+                                <img src="{{ mars['img_url'][0] }}" width=100%>    
+                                <figcaption class="figure-caption text-left"> <h5>Cerberus Hemisphere</h5></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <figure class="figure" style="margin: 50px; border: 1px solid rgb(206, 205, 205);">   
+                                <img src="{{ mars['img_url'][1] }}" width=100%>    
+                                <figcaption class="figure-caption text-left"> <h5>Schiaparelli Hemisphere</h5></figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="col-md-6">
+                            <figure class="figure" style="margin: 50px; border: 1px solid rgb(206, 205, 205);">   
+                                <img src="{{ mars['img_url'][2] }}" width=100%>    
+                                <figcaption class="figure-caption text-left"> <h5>Syrtis Major Hemisphere</h5></figcaption>
+                            </figure>
+                        </div>
+                    </div>  
+                </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>
